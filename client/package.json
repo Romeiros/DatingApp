@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~11.2.13",
     "@angular/router": "~11.2.13",
     "@kolkov/ngx-gallery": "^1.2.3",
+    "@microsoft/signalr": "^6.0.0",
     "alertifyjs": "^1.12.0",
     "bootstrap": "^4.3.1",
     "bootswatch": "^5.1.0",
