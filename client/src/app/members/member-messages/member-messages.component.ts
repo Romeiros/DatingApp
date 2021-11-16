@@ -7,7 +7,7 @@ import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-member-messages',
   templateUrl: './member-messages.component.html',
-  styleUrls: ['./member-messages.component.scss']
+  styleUrls: ['./member-messages.component.scss'],
 })
 export class MemberMessagesComponent implements OnInit {
 
@@ -19,6 +19,8 @@ export class MemberMessagesComponent implements OnInit {
   constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
+    console.log('INIT MESSAGES')
+    this.messageService.messageThread$.subscribe(m => console.log(m))
   }
 
   sendMessage() {

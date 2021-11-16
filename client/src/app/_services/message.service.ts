@@ -39,6 +39,7 @@ export class MessageService {
     });
 
     this.hubConnection.on('NewMessage', message => {
+      console.log('NewMessage', message)
       this.messageThread$.pipe(take(1)).subscribe(messages => {
         this.messageThreadSource.next([...messages, message]);
       });

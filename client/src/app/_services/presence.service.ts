@@ -16,7 +16,11 @@ export class PresenceService {
   private onlineUserSource = new BehaviorSubject<string[]>([]);
   onlineUsers$ = this.onlineUserSource.asObservable();
 
-  constructor(private toastr: ToastrService, private router: Router) { }
+  constructor(private toastr: ToastrService, private router: Router) {
+    setInterval(() => {
+
+    }, 1000);
+  }
 
   createHubConnection(user: User) {
     this.hubConnection = new HubConnectionBuilder()
@@ -34,6 +38,7 @@ export class PresenceService {
       console.log('UserIsOnline', username);
       this.onlineUsers$.pipe(take(1)).subscribe(usernames => {
         this.onlineUserSource.next([...usernames, username]);
+
         console.log(this.onlineUserSource.value)
       });
     });
