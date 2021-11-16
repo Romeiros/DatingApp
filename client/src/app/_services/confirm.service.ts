@@ -28,6 +28,7 @@ export class ConfirmService {
   private getResult() {
     return (observer) => {
       const subscription = this.bsModelRef.onHidden.subscribe(() => {
+        console.log(observer)
         observer.next(this.bsModelRef.content.result);
         observer.complete();
       });

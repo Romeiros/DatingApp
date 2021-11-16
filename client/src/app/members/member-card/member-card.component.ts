@@ -25,14 +25,12 @@ export class MemberCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.presenceService.onlineUsers$.subscribe(onlineUsers => {
-      console.log(onlineUsers);
       if (onlineUsers.includes(this.member.userName)) {
         this.isOnline$.next(true);
       } else {
         this.isOnline$.next(false);
       }
       this.cdr.detectChanges();
-      console.log(this.isOnline$.value)
     })
   }
 
