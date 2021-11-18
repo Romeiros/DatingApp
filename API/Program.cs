@@ -35,7 +35,7 @@ namespace API
                 logger.LogError(ex, "An error occured during migration");
             }
 
-            await host.RunAsync();
+            await host.RunAsync(); 
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
